@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded',()=>{
 
-// год в футере
+// год
 document.getElementById('year').textContent=new Date().getFullYear();
 
 // меню
@@ -60,8 +60,10 @@ function updateSlide(id){
   const modal=document.getElementById(id);
   const imgEl=modal.querySelector('img#'+id+'-main');
   imgEl.src=slidesData[id][currentSlide[id]];
+  // Подсветка активной миниатюры
   modal.querySelectorAll('.product-gallery img').forEach((thumb,index)=>{
     thumb.classList.toggle('active',index===currentSlide[id]);
+    thumb.style.opacity='1'; // делаем все миниатюры видимыми
   });
 }
 
@@ -90,6 +92,11 @@ window.addEventListener('keydown',e=>{
   if(e.key==='ArrowLeft') changeSlide(id,-1);
   else if(e.key==='ArrowRight') changeSlide(id,1);
   else if(e.key==='Escape') closeModal(id);
+});
+
+// Наведение + клик сразу работают
+document.querySelectorAll('.product-gallery img').forEach(img=>{
+  img.style.cursor='pointer';
 });
 
 });
