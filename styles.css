@@ -1,3 +1,4 @@
+/* Твой основной CSS + исправленный слайдер и модалки */
 :root{
   --bg:#fff;
   --fg:#000;
@@ -11,21 +12,21 @@ body{background:var(--bg);color:var(--fg)}
 a{text-decoration:none;color:inherit}
 .container{max-width:var(--container);margin:0 auto;padding:0 20px}
 
-/* --- Header --- */
+/* Header */
 .site-header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;padding:16px 0;z-index:50}
 .header-inner{display:flex;justify-content:space-between;align-items:center}
 .logo img{height:36px}
 .nav{display:flex;gap:20px;font-weight:500}
 .menu-btn{display:none;background:none;border:0;font-size:22px}
 
-/* --- Hero --- */
+/* Hero */
 .hero{padding:100px 0;text-align:center}
 .hero-logo-main{width:120px;margin-bottom:20px}
 .tagline{color:var(--muted);margin-top:10px;font-size:18px}
 .btn{display:inline-block;margin-top:20px;padding:12px 24px;border:1px solid var(--fg);color:var(--bg);background:var(--fg);border-radius:4px;font-weight:600}
 .btn-outline{background:transparent;color:var(--fg)}
 
-/* --- Sections --- */
+/* Sections */
 .section{padding:70px 0}
 .section h2{font-size:28px;margin-bottom:20px;text-align:center}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px}
@@ -34,33 +35,32 @@ a{text-decoration:none;color:inherit}
 .card-body{padding:16px}
 .price{color:var(--muted);margin:10px 0}
 
-/* --- Cart --- */
+/* Cart */
 .cart-table{width:100%;border-collapse:collapse;margin-top:20px}
 .cart-table th,.cart-table td{border-bottom:1px solid #eee;padding:12px;text-align:left}
 .cart-total{margin-top:20px;font-size:18px;font-weight:700;text-align:right}
 
-/* --- Footer --- */
+/* Footer */
 .site-footer{border-top:1px solid #eee;padding:20px 0;text-align:center;color:var(--muted);font-size:14px}
 
-/* --- Responsive --- */
+/* Responsive */
 @media(max-width:800px){.nav{display:none}.menu-btn{display:block}}
 
-/* --- Modal --- */
+/* Modal */
 body.modal-open{overflow:hidden}
 .modal{display:none;position:fixed;z-index:1000;top:0;left:0;width:100%;height:100%;overflow:auto;background-color:rgba(0,0,0,0.6)}
 .modal.show{display:block}
 .modal-content{background:#fff;margin:50px auto;padding:20px;border-radius:8px;width:90%;max-width:800px;position:relative}
 .close{position:absolute;top:10px;right:20px;font-size:28px;font-weight:bold;cursor:pointer}
 
-/* --- Slider --- */
+/* Slider */
 .slider-container{
   position: relative;
   overflow: hidden;
   width: 100%;
-  max-height: 450px;
   display: flex;
-  align-items: center; /* центрирует фото вертикально */
-  justify-content: center; /* центрирует по горизонтали */
+  justify-content: center;
+  align-items: center;
 }
 .slider-wrapper{
   display:flex;
@@ -68,10 +68,11 @@ body.modal-open{overflow:hidden}
   width:100%;
 }
 .slider-wrapper img{
-  width:100%;
-  flex-shrink:0;
-  object-fit: contain; /* фото не обрезаются */
-  max-height: 400px;
+  width: auto;
+  height: 400px;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: transform 0.4s ease;
 }
 
 /* Стрелки */
@@ -103,6 +104,7 @@ body.modal-open{overflow:hidden}
 }
 .product-gallery img{
   max-height:80px;
+  width:auto;
   margin:5px;
   cursor:pointer;
   border:2px solid transparent;
