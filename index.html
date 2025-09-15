@@ -10,9 +10,7 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="logo" href="#">
-        <img src="assets/logotip.svg" alt="getNullConcept logo" />
-      </a>
+      <a class="logo" href="#"><img src="assets/logotip.svg" alt="getNullConcept logo" /></a>
       <nav class="nav">
         <a href="#about">О бренде</a>
         <a href="#collections">Коллекции</a>
@@ -35,11 +33,7 @@
     <section id="about" class="section about">
       <div class="container">
         <h2>О бренде</h2>
-        <p>
-          getNullConcept — модный бренд минималистичной эстетики. Мы используем только
-          два цвета — белый и чёрный — чтобы подчеркнуть чистоту формы и силу образа.
-          Наши коллекции созданы для тех, кто ценит концептуальность и лаконичность.
-        </p>
+        <p>getNullConcept — модный бренд минималистичной эстетики. Мы используем только два цвета — белый и чёрный — чтобы подчеркнуть чистоту формы и силу образа. Наши коллекции созданы для тех, кто ценит концептуальность и лаконичность.</p>
       </div>
     </section>
 
@@ -55,7 +49,7 @@
             </div>
           </article>
           <article class="card" onclick="openModal('structured-coat')">
-            <img src="assets/2025-08-10_22-17-16.jpg" alt="Structured Coat — White" />
+            <img src="assets/photo_2025-08-10_22-17-16.jpg" alt="зипка" />
             <div class="card-body">
               <h3>зипка</h3>
               <p class="price">₽12000</p>
@@ -99,7 +93,11 @@
       <h1>пальто</h1>
       <div class="slider-container">
         <button class="prev" onclick="changeSlide('concept-coat', -1)">&#10094;</button>
-        <img id="concept-coat-main" src="assets/DSC00627.JPG" alt="пальто">
+        <div class="slider-wrapper" id="concept-coat-wrapper">
+          <img src="assets/DSC00627.JPG" alt="пальто">
+          <img src="assets/photo_2025-09-14_22-33-07.jpg" alt="пальто">
+          <img src="assets/photo_2025-09-14_22-33-11.jpg" alt="пальто">
+        </div>
         <button class="next" onclick="changeSlide('concept-coat', 1)">&#10095;</button>
       </div>
       <div class="product-gallery">
@@ -122,7 +120,10 @@
       <h1>зипка</h1>
       <div class="slider-container">
         <button class="prev" onclick="changeSlide('structured-coat', -1)">&#10094;</button>
-        <img id="structured-coat-main" src="assets/placeholder-2.jpg" alt="Structured Coat">
+        <div class="slider-wrapper" id="structured-coat-wrapper">
+          <img src="assets/photo_2025-08-10_22-17-16.jpg" alt="зипка">
+          <img src="assets/photo_2025-07-15_22-25-38.jpg" alt="зипка">
+        </div>
         <button class="next" onclick="changeSlide('structured-coat', 1)">&#10095;</button>
       </div>
       <div class="product-gallery">
