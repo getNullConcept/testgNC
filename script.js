@@ -1,9 +1,8 @@
-document.addEventListener('DOMContentLoaded',()=>{
+document.addEventListener('DOMContentLoaded', ()=>{
+  // Год
+  document.getElementById('year').textContent = new Date().getFullYear();
 
-  // --- год ---
-  document.getElementById('year').textContent=new Date().getFullYear();
-
-  // --- меню ---
+  // Меню
   const menuBtn=document.querySelector('.menu-btn');
   const nav=document.querySelector('.nav');
   menuBtn.addEventListener('click',()=>{
@@ -12,7 +11,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     nav.style.display=expanded?'none':'flex';
   });
 
-  // --- корзина ---
+  // Корзина
   const cartBody=document.getElementById('cart-body');
   const cartTotal=document.getElementById('cart-total');
   let total=0;
@@ -23,29 +22,22 @@ document.addEventListener('DOMContentLoaded',()=>{
       const row=document.createElement('tr');
       row.innerHTML=`<td>${name}</td><td>${price}</td><td><button class='remove'>✕</button></td>`;
       cartBody.appendChild(row);
-      total+=price;
-      cartTotal.textContent=total;
+      total+=price;cartTotal.textContent=total;
       row.querySelector('.remove').addEventListener('click',()=>{
-        row.remove();
-        total-=price;
-        cartTotal.textContent=total;
+        row.remove();total-=price;cartTotal.textContent=total;
       });
     });
   });
 
-  // --- слайдеры ---
-  const slidesData={
-    'concept-coat': [
-      'assets/DSC00627.JPG',
-      'assets/photo_2025-09-14_22-33-07.jpg',
-      'assets/photo_2025-09-14_22-33-11.jpg'
-    ],
-    'structured-coat': [
-      'assets/photo_2025-08-10_22-17-16.jpg',
-      'assets/photo_2025-07-15_22-25-38.jpg'
-    ]
-  };
+  // Модалки и слайдер
   const currentSlide={};
+  const slidesData={};
+
+  document.querySelectorAll('.slider-wrapper').forEach(wrapper=>{
+    const modalId=wrapper.closest('.modal').id;
+    slidesData[modalId]=Array.from(wrapper.querySelectorAll('img'));
+    currentSlide[modalId]=0;
+  });
 
   window.openModal=function(id){
     const modal=document.getElementById(id);
@@ -64,17 +56,16 @@ document.addEventListener('DOMContentLoaded',()=>{
   }
 
   function updateSlide(id){
-    const wrapper=document.getElementById(id+'-wrapper');
-    wrapper.style.transform = `translateX(-${currentSlide[id]*100}%)`;
-    const modal=document.getElementById(id);
-    modal.querySelectorAll('.product-gallery img').forEach((thumb,index)=>{
+    const wrapper=document.getElementById(id).querySelector('.slider-wrapper');
+    wrapper.style.transform=`translateX(-${currentSlide[id]*100}%)`;
+    document.getElementById(id).querySelectorAll('.product-gallery img').forEach((thumb,index)=>{
       thumb.classList.toggle('active', index===currentSlide[id]);
     });
   }
 
   window.changeSlide=function(id,step){
     if(!slidesData[id]) return;
-    currentSlide[id] = (currentSlide[id]+step+slidesData[id].length)%slidesData[id].length;
+    currentSlide[id]=(currentSlide[id]+step+slidesData[id].length)%slidesData[id].length;
     updateSlide(id);
   }
 
@@ -96,5 +87,4 @@ document.addEventListener('DOMContentLoaded',()=>{
     else if(e.key==='ArrowRight') changeSlide(id,1);
     else if(e.key==='Escape') closeModal(id);
   });
-
 });
