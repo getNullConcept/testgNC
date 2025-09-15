@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     if(!modal) return;
     modal.classList.add('show');
     document.body.classList.add('modal-open');
-    currentSlide[id]=0;
+    currentSlide[id] = 0;
     updateSlide(id);
   }
 
