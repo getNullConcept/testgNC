@@ -45,11 +45,39 @@ a{text-decoration:none;color:inherit}
 /* Responsive */
 @media(max-width:800px){.nav{display:none}.menu-btn{display:block}}
 
-/* Modal */
+/* Modal + animation */
 body.modal-open{overflow:hidden}
-.modal{display:none;position:fixed;z-index:1000;top:0;left:0;width:100%;height:100%;overflow:auto;background-color:rgba(0,0,0,0.6)}
-.modal.show{display:block}
-.modal-content{background:#fff;margin:50px auto;padding:20px;border-radius:8px;width:90%;max-width:800px;position:relative}
+.modal{
+  display:none;
+  position:fixed;
+  z-index:1000;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color: rgba(0,0,0,0.6);
+  opacity:0;
+  transition: opacity 0.3s ease;
+}
+.modal.show{display:block;opacity:1}
+
+.modal-content{
+  background:#fff;
+  margin:50px auto;
+  padding:20px;
+  border-radius:8px;
+  width:90%;
+  max-width:800px;
+  position:relative;
+  transform: scale(0.8);
+  opacity:0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.modal.show .modal-content{
+  transform: scale(1);
+  opacity:1;
+}
+
 .close{position:absolute;top:10px;right:20px;font-size:28px;font-weight:bold;cursor:pointer}
 
 /* Slider */
@@ -67,14 +95,14 @@ body.modal-open{overflow:hidden}
   transition: transform 0.4s ease;
 }
 .slider-wrapper img{
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  flex-shrink: 0;
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  flex-shrink:0;
   transition: transform 0.4s ease;
 }
 
-/* Стрелки */
+/* Arrows */
 .prev, .next{
   cursor:pointer;
   position:absolute;
@@ -96,7 +124,7 @@ body.modal-open{overflow:hidden}
 .prev{left:10px}
 .next{right:10px}
 
-/* Миниатюры */
+/* Thumbnails */
 .product-gallery{
   text-align:center;
   margin-top:10px;
