@@ -49,7 +49,7 @@
             </div>
           </article>
           <article class="card" onclick="openModal('structured-coat')">
-            <img src="assets/photo_2025-08-10_22-17-16.jpg" alt="зипка" />
+            <img src="assets/2025-08-10_22-17-16.jpg" alt="Structured Coat — White" />
             <div class="card-body">
               <h3>зипка</h3>
               <p class="price">₽12000</p>
@@ -63,9 +63,7 @@
       <div class="container">
         <h2>Магазин</h2>
         <table class="cart-table">
-          <thead>
-            <tr><th>Товар</th><th>Цена (₽)</th><th></th></tr>
-          </thead>
+          <thead><tr><th>Товар</th><th>Цена (₽)</th><th></th></tr></thead>
           <tbody id="cart-body"></tbody>
         </table>
         <div class="cart-total">Итого: ₽<span id="cart-total">0</span></div>
@@ -85,19 +83,18 @@
   </main>
 
   <!-- Модалки -->
-
   <!-- Товар 1 -->
   <div id="concept-coat" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal('concept-coat')">&times;</span>
       <h1>пальто</h1>
       <div class="slider-container">
-        <button class="prev" onclick="changeSlide('concept-coat', -1)">&#10094;</button>
-        <div class="slider-wrapper" id="concept-coat-wrapper">
-          <img src="assets/DSC00627.JPG" alt="пальто">
-          <img src="assets/photo_2025-09-14_22-33-07.jpg" alt="пальто">
-          <img src="assets/photo_2025-09-14_22-33-11.jpg" alt="пальто">
+        <div class="slider-wrapper">
+          <img src="assets/DSC00627.JPG">
+          <img src="assets/photo_2025-09-14_22-33-07.jpg">
+          <img src="assets/photo_2025-09-14_22-33-11.jpg">
         </div>
+        <button class="prev" onclick="changeSlide('concept-coat', -1)">&#10094;</button>
         <button class="next" onclick="changeSlide('concept-coat', 1)">&#10095;</button>
       </div>
       <div class="product-gallery">
@@ -105,9 +102,7 @@
         <img src="assets/photo_2025-09-14_22-33-07.jpg" onclick="setSlide('concept-coat',1)">
         <img src="assets/photo_2025-09-14_22-33-11.jpg" onclick="setSlide('concept-coat',2)">
       </div>
-      <p class="description">
-        Материал: 100% полиэстер.<br>Размеры: Onesize.<br>пальто укороченное с высоким воротником 2025.
-      </p>
+      <p class="description">Материал: 100% полиэстер.<br>Размеры: Onesize.<br>пальто укороченное с высоким воротником 2025.</p>
       <p class="price">₽8000</p>
       <button class="btn add-to-cart" data-name="пальто" data-price="8000">В корзину</button>
     </div>
@@ -119,20 +114,18 @@
       <span class="close" onclick="closeModal('structured-coat')">&times;</span>
       <h1>зипка</h1>
       <div class="slider-container">
-        <button class="prev" onclick="changeSlide('structured-coat', -1)">&#10094;</button>
-        <div class="slider-wrapper" id="structured-coat-wrapper">
-          <img src="assets/photo_2025-08-10_22-17-16.jpg" alt="зипка">
-          <img src="assets/photo_2025-07-15_22-25-38.jpg" alt="зипка">
+        <div class="slider-wrapper">
+          <img src="assets/photo_2025-08-10_22-17-16.jpg">
+          <img src="assets/photo_2025-07-15_22-25-38.jpg">
         </div>
+        <button class="prev" onclick="changeSlide('structured-coat', -1)">&#10094;</button>
         <button class="next" onclick="changeSlide('structured-coat', 1)">&#10095;</button>
       </div>
       <div class="product-gallery">
         <img src="assets/photo_2025-08-10_22-17-16.jpg" onclick="setSlide('structured-coat',0)">
         <img src="assets/photo_2025-07-15_22-25-38.jpg" onclick="setSlide('structured-coat',1)">
       </div>
-      <p class="description">
-        Материал: 100% хлопок.<br>Размеры: S,M,L.<br>укороченная зипка 2025.
-      </p>
+      <p class="description">Материал: 100% хлопок.<br>Размеры: S,M,L.<br>укороченная зипка 2025.</p>
       <p class="price">₽12000</p>
       <button class="btn add-to-cart" data-name="Structured Coat — White" data-price="12000">В корзину</button>
     </div>
