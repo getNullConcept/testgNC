@@ -1,16 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>getNullConcept — Fashion Concept</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="assets/logotip.svg" />
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/logotip.svg">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="logo" href="#"><img src="assets/logotip.svg" alt="getNullConcept logo" /></a>
+      <a class="logo" href="#"><img src="assets/logotip.svg" alt="getNullConcept logo"></a>
       <nav class="nav">
         <a href="#about">О бренде</a>
         <a href="#collections">Коллекции</a>
@@ -24,7 +24,7 @@
   <main>
     <section class="hero">
       <div class="hero-inner container">
-        <img src="assets/logotip.svg" alt="Main Logo" class="hero-logo-main" />
+        <img src="assets/logotip.svg" alt="Main Logo" class="hero-logo-main">
         <p class="tagline">getNull. Concept.</p>
         <a class="btn" href="#collections">Посмотреть коллекции</a>
       </div>
@@ -33,7 +33,7 @@
     <section id="about" class="section about">
       <div class="container">
         <h2>О бренде</h2>
-        <p>getNullConcept — модный бренд минималистичной эстетики. Мы используем только два цвета — белый и чёрный — чтобы подчеркнуть чистоту формы и силу образа. Наши коллекции созданы для тех, кто ценит концептуальность и лаконичность.</p>
+        <p>getNullConcept — модный бренд минималистичной эстетики. Мы используем только два цвета — белый и чёрный — чтобы подчеркнуть чистоту формы и силу образа.</p>
       </div>
     </section>
 
@@ -42,14 +42,14 @@
         <h2>Коллекции</h2>
         <div class="cards">
           <article class="card" onclick="openModal('concept-coat')">
-            <img src="assets/DSC00627.JPG" alt="пальто" />
+            <img src="assets/DSC00627.JPG" alt="пальто">
             <div class="card-body">
               <h3>пальто</h3>
               <p class="price">₽8000</p>
             </div>
           </article>
           <article class="card" onclick="openModal('structured-coat')">
-            <img src="assets/2025-08-10_22-17-16.jpg" alt="Structured Coat — White" />
+            <img src="assets/photo_2025-08-10_22-17-16.jpg" alt="зипка">
             <div class="card-body">
               <h3>зипка</h3>
               <p class="price">₽12000</p>
@@ -82,7 +82,7 @@
     </section>
   </main>
 
-  <!-- Модалки -->
+  <!-- Модалки товаров -->
   <!-- Товар 1 -->
   <div id="concept-coat" class="modal">
     <div class="modal-content">
@@ -102,7 +102,7 @@
         <img src="assets/photo_2025-09-14_22-33-07.jpg" onclick="setSlide('concept-coat',1)">
         <img src="assets/photo_2025-09-14_22-33-11.jpg" onclick="setSlide('concept-coat',2)">
       </div>
-      <p class="description">Материал: 100% полиэстер.<br>Размеры: Onesize.<br>пальто укороченное с высоким воротником 2025.</p>
+      <p class="description">Материал: 100% полиэстер.<br>Размер: Onesize.<br>Укороченное пальто с высоким воротником 2025.</p>
       <p class="price">₽8000</p>
       <button class="btn add-to-cart" data-name="пальто" data-price="8000">В корзину</button>
     </div>
@@ -125,9 +125,9 @@
         <img src="assets/photo_2025-08-10_22-17-16.jpg" onclick="setSlide('structured-coat',0)">
         <img src="assets/photo_2025-07-15_22-25-38.jpg" onclick="setSlide('structured-coat',1)">
       </div>
-      <p class="description">Материал: 100% хлопок.<br>Размеры: S,M,L.<br>укороченная зипка 2025.</p>
+      <p class="description">Материал: 100% хлопок.<br>Размер: S,M,L.<br>Укороченная зипка 2025.</p>
       <p class="price">₽12000</p>
-      <button class="btn add-to-cart" data-name="Structured Coat — White" data-price="12000">В корзину</button>
+      <button class="btn add-to-cart" data-name="зипка" data-price="12000">В корзину</button>
     </div>
   </div>
 
