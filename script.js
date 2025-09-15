@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     });
   });
 
-  // --- слайдеры с актуальными фото ---
+  // --- слайдеры ---
   const slidesData={
     'concept-coat': [
       'assets/DSC00627.JPG',
@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded',()=>{
   };
   const currentSlide={};
 
-  // --- открыть модалку ---
   window.openModal=function(id){
     const modal=document.getElementById(id);
     if(!modal) return;
@@ -57,7 +56,6 @@ document.addEventListener('DOMContentLoaded',()=>{
     updateSlide(id);
   }
 
-  // --- закрыть модалку ---
   window.closeModal=function(id){
     const modal=document.getElementById(id);
     if(!modal) return;
@@ -65,36 +63,31 @@ document.addEventListener('DOMContentLoaded',()=>{
     document.body.classList.remove('modal-open');
   }
 
-  // --- обновить слайд ---
   function updateSlide(id){
+    const wrapper=document.getElementById(id+'-wrapper');
+    wrapper.style.transform = `translateX(-${currentSlide[id]*100}%)`;
     const modal=document.getElementById(id);
-    const imgEl=modal.querySelector('img#'+id+'-main');
-    imgEl.src=slidesData[id][currentSlide[id]];
     modal.querySelectorAll('.product-gallery img').forEach((thumb,index)=>{
-      thumb.classList.toggle('active',index===currentSlide[id]);
+      thumb.classList.toggle('active', index===currentSlide[id]);
     });
   }
 
-  // --- стрелки ---
   window.changeSlide=function(id,step){
     if(!slidesData[id]) return;
-    currentSlide[id]=(currentSlide[id]+step+slidesData[id].length)%slidesData[id].length;
+    currentSlide[id] = (currentSlide[id]+step+slidesData[id].length)%slidesData[id].length;
     updateSlide(id);
   }
 
-  // --- миниатюры ---
   window.setSlide=function(id,index){
     if(!slidesData[id]) return;
     currentSlide[id]=index%slidesData[id].length;
     updateSlide(id);
   }
 
-  // --- закрытие кликом вне ---
   window.onclick=function(e){
     if(e.target.classList.contains('modal')) closeModal(e.target.id);
   }
 
-  // --- клавиши ---
   window.addEventListener('keydown',e=>{
     const openModalEl=document.querySelector('.modal.show');
     if(!openModalEl) return;
@@ -102,11 +95,6 @@ document.addEventListener('DOMContentLoaded',()=>{
     if(e.key==='ArrowLeft') changeSlide(id,-1);
     else if(e.key==='ArrowRight') changeSlide(id,1);
     else if(e.key==='Escape') closeModal(id);
-  });
-
-  // --- курсор для миниатюр ---
-  document.querySelectorAll('.product-gallery img').forEach(img=>{
-    img.style.cursor='pointer';
   });
 
 });
